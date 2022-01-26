@@ -1,3 +1,6 @@
+let mapleader="\<Space>"
+let maplocalleader="\\"
+
 if &loadplugins
   if has('packages')
     " git submodule add --name xxx git@github.com:xxx.git config/nvim/pack/plugins/opt/xxx
@@ -23,9 +26,6 @@ if &loadplugins
     packadd! vim-jsx-typescript
   endif
 endif
-
-let mapleader="\<Space>"
-let maplocalleader="\\"
 
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching 
