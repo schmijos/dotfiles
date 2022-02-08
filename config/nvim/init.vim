@@ -61,14 +61,14 @@ set noswapfile            " disable creating swap file
 set splitright
 set splitbelow
 
-if !isdirectory("~/.cache/vim/undodir")
-    call mkdir("~/.cache/vim/undodir", "p", 0700)
+if !isdirectory($HOME . '/.cache/vim/undodir')
+    call mkdir($HOME . '/.cache/vim/undodir', 'p', 0700)
 endif
-set undodir=~/.cache/vim/undodir " persistent undo
+set undodir=$HOME/.cache/vim/undodir " persistent undo
 set undofile
 
 " color schemes
-if (has("termguicolors"))
+if (has('termguicolors'))
   set termguicolors
 endif
 colorscheme xcodedark
