@@ -52,3 +52,24 @@
 [submodule "vim-ruby"]
 	path = config/nvim/pack/plugins/opt/vim-ruby
 	url = git@github.com:vim-ruby/vim-ruby.git
+[submodule "vim-endwise"]
+	path = config/nvim/pack/plugins/opt/vim-endwise
+	url = git@github.com:tpope/vim-endwise.git
+[submodule "vim-surround"]
+	path = config/nvim/pack/plugins/opt/vim-surround
+	url = git@github.com:tpope/vim-surround.git
+[submodule "vim-test"]
+	path = config/nvim/pack/plugins/opt/vim-test
+	url = git@github.com:vim-test/vim-test.git
+[submodule "vim-ultest"]
+	path = config/nvim/pack/plugins/opt/vim-ultest
+	url = git@github.com:rcarriga/vim-ultest
+[submodule "vim-sensible"]
+	path = config/nvim/pack/plugins/opt/vim-sensible
+	url = git@github.com:tpope/vim-sensible
+[submodule "vim-sleuth"]
+	path = config/nvim/pack/plugins/opt/vim-sleuth
+	url = git@github.com:tpope/vim-sleuth
+[submodule "vim-obsession"]
+	path = config/nvim/pack/plugins/opt/vim-obsession
+	url = git@github.com:tpope/vim-obsession

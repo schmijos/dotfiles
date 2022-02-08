@@ -8,3 +8,5 @@
 	program = /opt/homebrew/bin/gpg
 [pull]
 	rebase = true
+[core]
+	excludesfile = /Users/josua/.gitignore
