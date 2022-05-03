@@ -6,7 +6,7 @@ if &loadplugins
     " git submodule add --name xxx git@github.com:xxx.git config/nvim/pack/plugins/opt/xxx
     packadd! vim-colors-xcode
     packadd! nerdtree
-    packadd! nerdtree-tabs
+    " packadd! nerdtree-tabs
 
     packadd! plenary
     packadd! telescope
@@ -32,6 +32,8 @@ if &loadplugins
     packadd! vim-sensible
     packadd! vim-sleuth
     packadd! vim-obsession
+    packadd! vim-fugitive
+    packadd! vim-rhubarb
 
     packadd! vim-javascript
     packadd! typescript-vim
@@ -56,6 +58,7 @@ set clipboard=unnamedplus   " using system clipboard
 set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
 set noswapfile            " disable creating swap file
+" set statusline=%{FugitiveStatusline()}
  
 " open new split panes to right and below
 set splitright
@@ -73,10 +76,28 @@ if (has('termguicolors'))
 endif
 colorscheme xcodedark
 
+" Code completion
 let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-html', 'coc-css', 'coc-solargraph']
 let g:endwise_no_mappings = 1
 
+" Telescope
+lua << EOF
+local actions = require("telescope.actions")
+require("telescope").setup{
+  defaults = {
+    mappings = {
+      n = {
+        ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist
+      },
+      i = {
+        ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist
+      },
+    },
+  }
+}
+EOF
 nnoremap <leader>qq <cmd>Telescope grep_string<cr>
+vnoremap <leader>qq "zy<cmd>exec 'Telescope grep_string default_text=' . escape(@z, ' ')<cr>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fq <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>

@@ -73,3 +73,12 @@
 [submodule "vim-obsession"]
 	path = config/nvim/pack/plugins/opt/vim-obsession
 	url = git@github.com:tpope/vim-obsession
+[submodule "vim-fugitive"]
+	path = config/nvim/pack/plugins/opt/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive
+[submodule "vim-rhubarb"]
+	path = config/nvim/pack/plugins/opt/vim-rhubarb
+	url = git@github.com:tpope/vim-rhubarb
+[submodule "auto-session"]
+	path = config/nvim/pack/plugins/opt/auto-session
+	url = git@github.com:rmagatti/auto-session

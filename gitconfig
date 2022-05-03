@@ -10,3 +10,7 @@
 	rebase = true
 [core]
 	excludesfile = /Users/josua/.gitignore
+[init]
+	defaultBranch = main
+[rebase]
+	autoStash = true
