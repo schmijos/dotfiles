@@ -1,16 +1,37 @@
+[commit]
+	gpgsign = true
+	verbose = true
+[core]
+	excludesFile = /Users/josua/.gitignore
+	pager = delta
+[diff]
+	algorithm = histogram
+	colorMoved = default
+	colorMovedWS = allow-indentation-change
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[gpg]
+	program = /opt/homebrew/bin/gpg
+[init]
+	defaultBranch = main
+[log]
+	date = iso
+[merge]
+  conflictStyle = zdiff3
+[pull]
+	rebase = true
+[push]
+	followTags = true
+[rebase]
+	autoStash = true
+	autoSquash = true
+	updateRefs = true
+[rerere]
+	enabled = true
 [user]
 	name = Josua Schmid
 	email = josua.schmid@renuo.ch
 	signingkey = 3B7246B80CA7A30D
-[commit]
-	gpgsign = true
-[gpg]
-	program = /opt/homebrew/bin/gpg
-[pull]
-	rebase = true
-[core]
-	excludesfile = /Users/josua/.gitignore
-[init]
-	defaultBranch = main
-[rebase]
-	autoStash = true
