@@ -1,4 +1,4 @@
-source /opt/homebrew/share/antigen/antigen.zsh
+source ~/antigen.zsh
 
 antigen use oh-my-zsh
 
@@ -6,7 +6,7 @@ antigen bundle git
 antigen bundle heroku
 antigen bundle bundler
 antigen bundle colored-man-pages
-antigen bundle asdf
+antigen bundle "MichaelAquilina/zsh-you-should-use"
 
 antigen bundle ssh-agent
 zstyle :omz:plugins:ssh-agent lazy yes

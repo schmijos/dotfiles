@@ -2,3 +2,6 @@ node_modules/
 tags
 .DS_Store
 .idea/
+.gitconfig
+.byebug_history
+.claude/

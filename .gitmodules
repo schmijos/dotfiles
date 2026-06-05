@@ -82,3 +82,9 @@
 [submodule "auto-session"]
 	path = config/nvim/pack/plugins/opt/auto-session
 	url = git@github.com:rmagatti/auto-session
+[submodule "vim-localorie"]
+	path = config/nvim/pack/plugins/opt/vim-localorie
+	url = git@github.com:airblade/vim-localorie
+[submodule "chadtree"]
+	path = config/nvim/pack/plugins/opt/chadtree
+	url = git@github.com:ms-jpq/chadtree

@@ -3,7 +3,10 @@
 	verbose = true
 [core]
 	excludesFile = /Users/josua/.gitignore
-	pager = delta
+  pager = delta
+  hookspath = /Users/josua/.git/hooks
+[delta]
+    navigate = true 
 [diff]
 	algorithm = histogram
 	colorMoved = default
@@ -17,6 +20,8 @@
 	program = /opt/homebrew/bin/gpg
 [init]
 	defaultBranch = main
+[interactive]
+  diffFilter = delta --color-only
 [log]
 	date = iso
 [merge]
@@ -34,4 +39,4 @@
 [user]
 	name = Josua Schmid
 	email = josua.schmid@renuo.ch
-	signingkey = 3B7246B80CA7A30D
+	signingkey = B2C4B23AB8B9F45816F3E59A3D708F1192C35419
