@@ -39,7 +39,7 @@ safe() {
     --add-dirs-ro="$HOME/.gitignore" \
     --enable=kubectl -- "$@";
 }
-claude()   { safe claude --dangerously-skip-permissions "$@"; }
+claude()   { safe claude --permission-mode auto "$@"; }
 codex()    { safe codex --dangerously-bypass-approvals-and-sandbox "$@"; }
 amp()      { safe amp --dangerously-allow-all "$@"; }
 gemini()   { NO_BROWSER=true safe gemini --yolo "$@"; }
