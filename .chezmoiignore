@@ -5,3 +5,17 @@ test
 
 # Rewritten by Xournal++ on every exit, with the last opened paths
 .config/xournalpp
+
+# Claude Code state and credentials; only CLAUDE.md and own skills are tracked
+.claude/*
+!.claude/CLAUDE.md
+!.claude/skills
+.claude/skills/synced
+
+# Skills Omarchy links into every agent's skill directory
+.agents/skills/omarchy
+.agents/skills/omarchy-*
+.agents/skills/diagnose-crash
+.claude/skills/omarchy
+.claude/skills/omarchy-*
+.claude/skills/diagnose-crash

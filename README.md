@@ -27,6 +27,10 @@ app registers. Omarchy's current defaults live in `/etc/skel` and `/usr/share/om
 
 Never track secrets (tokens, keys, credentials). They stay in 1Password.
 
+Agent instructions live in `~/.agents/AGENTS.md`; Claude reads them through the symlink `~/.claude/CLAUDE.md`.
+Put your own skills in `~/.agents/skills/<name>` and link them from `~/.claude/skills/<name>`, the way Omarchy
+links its own. `.chezmoiignore` keeps Claude Code's state and Omarchy's skill links out.
+
 | What | Command |
 |---|---|
 | Start tracking a file or directory | `chezmoi add ~/.config/foo/bar.toml` |
