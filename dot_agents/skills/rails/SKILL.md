@@ -1,3 +1,8 @@
+---
+name: rails
+description: Conventions for writing and changing code in Ruby on Rails apps (Rails Omakase, generators, no premature abstraction, Hotwire, Minitest). Use whenever working in a Rails project.
+---
+
 # Rails
 
 ## Follow Rails conventions and idioms

@@ -50,12 +50,3 @@ Split commits properly. Regression tests separately.
 Commit messages should be one line, present-tense, imperative.
 Focus on why the change was made, not what changed.
 The diff already shows the "what"; the message should explain the intent or reason.
-
-## Frameworks
-
-The following instructions are only relevant if you find yourself
-working in the context of such.
-
-### Rails
-
-Use the skill in ~/.agents/rails.md
