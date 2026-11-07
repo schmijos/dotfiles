@@ -26,6 +26,12 @@ render() {
   bash -n <(echo "$output")
 }
 
+@test "package script never asks the AUR for packages that were only ever built locally" {
+  run render true
+  [[ "$output" != *'"hm1092-ir-camera"'* ]]
+  [[ "$output" != *'"omarchy-dell-xps-face"'* ]]
+}
+
 @test "package script never switches the Omarchy channel" {
   run render true
   [[ "$output" != *'omarchy-dev'* ]]
