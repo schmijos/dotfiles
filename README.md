@@ -8,15 +8,18 @@ The old macOS dotfiles live on the [`macos`](https://github.com/schmijos/dotfile
 
 1. Install Omarchy.
 2. `omarchy install service 1password`, then sign in to the 1Password app.
-3. `omarchy pkg add chezmoi`
-4. `chezmoi init --apply --source ~/Work/dotfiles <repo-url>`
+3. Put the SSH key from 1Password in `~/.ssh/id_ed25519` (`chmod 600`) and `~/.ssh/id_ed25519.pub`.
+   It has to be there first: the git config signs every commit with it and sends all GitHub traffic over SSH,
+   including this repo's clone and later `chezmoi update`s.
+4. `omarchy pkg add chezmoi`
+5. `chezmoi init --apply --source ~/Work/dotfiles git@github.com:schmijos/dotfiles.git`
    (`--source` because the config expects the repo in ~/Work/dotfiles, not chezmoi's default location.)
    It asks whether this is a Dell XPS 14, installs the extra packages from `.chezmoidata/packages.yaml`
    through `omarchy pkg add` / `omarchy pkg aur add`, writes the config, and runs `mise install`.
-5. `omarchy install dictation voxtype`
-6. Secrets by hand: `rclone config` (gdrive), `gh auth login`, and
+6. `omarchy install dictation voxtype`
+7. Secrets by hand: `rclone config` (gdrive), `gh auth login`, and
    `~/.config/restic/work-password` from 1Password.
-7. Restore ~/Work, all or in parts (see below).
+8. Restore ~/Work, all or in parts (see below).
 
 ## Tracking files
 
