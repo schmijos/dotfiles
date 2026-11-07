@@ -1,4 +1,4 @@
-# dotfiles
+# dotfiles for macOS
 
 ## Notable prerequisites
 
