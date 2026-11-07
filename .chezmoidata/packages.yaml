@@ -37,6 +37,7 @@ packages:
     - wev
     - xournalpp
   aur:
+    - doubletake
     - google-cloud-cli
     - nctl
     - rubymine
