@@ -1,4 +1,4 @@
-{{- $dellXps14 := promptBoolOnce . "dellXps14" "Install Dell XPS 14 hardware packages (DisplayLink, IR face login)" -}}
+{{- $dellXps14 := promptBoolOnce . "dellXps14" "Install Dell XPS 14 hardware packages (Intel microcode)" -}}
 sourceDir = {{ joinPath .chezmoi.homeDir "Work/dotfiles" | quote }}
 
 [data]

@@ -3,7 +3,7 @@
 render() {
   chezmoi --source "$BATS_TEST_DIRNAME/.." --config "$BATS_TEST_TMPDIR/chezmoi.toml" \
     --persistent-state "$BATS_TEST_TMPDIR/state" execute-template --init \
-    --promptBool "Install Dell XPS 14 hardware packages (DisplayLink, IR face login)=$1" \
+    --promptBool "Install Dell XPS 14 hardware packages (Intel microcode)=$1" \
     < "$BATS_TEST_DIRNAME/../.chezmoi.toml.tmpl" > "$BATS_TEST_TMPDIR/chezmoi.toml"
   chezmoi --source "$BATS_TEST_DIRNAME/.." --config "$BATS_TEST_TMPDIR/chezmoi.toml" \
     --persistent-state "$BATS_TEST_TMPDIR/state" execute-template \
@@ -22,7 +22,6 @@ render() {
 @test "package script adds XPS hardware packages when asked" {
   run render true
   [[ "$output" == *'"intel-ucode"'* ]]
-  [[ "$output" == *'"howdy"'* ]]
   bash -n <(echo "$output")
 }
 

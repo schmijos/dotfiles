@@ -45,9 +45,4 @@ packages:
   dellXps14:
     pacman:
       - intel-ucode
-    aur:
-      - displaylink
-      - hm1092-ir-camera
-      - howdy
-      - omarchy-dell-xps-face
-      - pamtester
+    aur: []
