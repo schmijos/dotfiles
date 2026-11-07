@@ -44,6 +44,25 @@ The repo lives in ~/Work/dotfiles, so plain git there works too.
 `chezmoi add` scans for secrets and warns. Read the warning before committing.
 `bin/check` runs shellcheck and the bats tests.
 
+## Omarchy update
+
+Omarchy never touches ~/.config after install, so new defaults don't reach you on their own. They land in
+`/etc/skel`, the tree a fresh user's home is copied from. After an update, compare your tracked files
+against it. This only reads `/etc/skel` and changes nothing in your home:
+
+    chezmoi diff --destination /etc/skel --exclude scripts \
+      $(chezmoi status --destination /etc/skel --exclude scripts | awk '$1 != "A" {print "/etc/skel/" $NF}')
+
+`-` lines are Omarchy's current default, `+` lines are yours. The `status` filter drops your own files that
+Omarchy doesn't ship; without it, every one of those shows up as added. Some entries differ only in file
+mode, which is harmless.
+
+It's a two-way comparison. For files you never changed, every difference is an Omarchy change. For files
+you customized, your edits and Omarchy's new changes show up mixed together. To tell them apart, diff the old
+and new Omarchy version (`grep omarchy-settings /var/log/pacman.log | tail -1`) in Omarchy's git repo.
+
+Take what you want into ~/.config by hand, then `chezmoi re-add`.
+
 ## ~/Work backup
 
 A restic repository (encrypted, deduplicated) at `gdrive:Backups/work`, run daily by
