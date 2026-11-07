@@ -2,3 +2,6 @@ README.md
 bin
 test
 .config/restic/work-password
+
+# Rewritten by Xournal++ on every exit, with the last opened paths
+.config/xournalpp
