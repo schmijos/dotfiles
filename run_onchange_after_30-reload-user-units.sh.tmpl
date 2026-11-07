@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# unit hash: {{ output "sh" "-c" (printf "find %q -type f -print0 | sort -z | xargs -0 cat | sha256sum" (joinPath .chezmoi.sourceDir "dot_config/systemd/user")) }}
+set -euo pipefail
+systemctl --user daemon-reload

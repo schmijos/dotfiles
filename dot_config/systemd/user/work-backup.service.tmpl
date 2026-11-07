@@ -1,0 +1,13 @@
+[Unit]
+Description=Back up ~/Work to Google Drive
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+Environment=RESTIC_REPOSITORY=rclone:gdrive:Backups/work
+Environment=RESTIC_PASSWORD_FILE={{ .chezmoi.homeDir }}/.config/restic/work-password
+ExecStart=/usr/bin/restic backup {{ .chezmoi.homeDir }}/Work --one-file-system --exclude-caches --exclude-file={{ .chezmoi.homeDir }}/.config/restic/work-excludes.txt
+ExecStartPost=/usr/bin/restic forget --keep-daily 7 --keep-weekly 8 --keep-monthly 12 --prune
+Nice=10
+IOSchedulingClass=idle

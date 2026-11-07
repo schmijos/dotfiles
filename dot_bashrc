@@ -1,0 +1,39 @@
+# Omarchy environment (OMARCHY_PATH + PATH), needed even for non-interactive shells
+[[ -r /usr/share/omarchy/default/bash/env-bootstrap ]] && source /usr/share/omarchy/default/bash/env-bootstrap
+
+# If not running interactively, don't do anything else (leave this above the rc source)
+[[ $- != *i* ]] && return
+
+# All the default Omarchy aliases and functions
+# (don't mess with these directly, just overwrite them here!)
+source "$OMARCHY_PATH/default/bash/rc"
+
+# Add your own exports, aliases, and functions here.
+#
+# Make an alias for invoking commands you use constantly
+# alias p='python'
+
+export WKHTMLTOPDF_HOST_SUFFIX=ubuntu_22.04_amd64
+
+_claude_op() {
+  op run --no-masking --env-file "$HOME/.config/op-env/claude.env" -- claude "$@"
+}
+
+claude() {
+  local work="$HOME/Work"
+  if [[ "$PWD" == "$work" || "$PWD" == "$work"/* ]]; then
+    _claude_op "$@"
+    return
+  fi
+
+  local reply
+  read -rp "Outside ~/Work. Run here [h] or in ~/Work [w]? [w] " reply
+  case "$reply" in
+    h|H) _claude_op "$@" ;;
+    ""|w|W) (cd "$work" && _claude_op "$@") ;;
+    *) echo "claude: aborted" >&2; return 1 ;;
+  esac
+}
+
+alias ll='ls -lha'
+

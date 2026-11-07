@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")/.."
+shellcheck bin/*
+mise x chezmoi@2.74.0 -- bats test

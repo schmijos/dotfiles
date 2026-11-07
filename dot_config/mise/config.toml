@@ -1,0 +1,13 @@
+[tools]
+go = "latest"
+postgres = "latest"
+ruby = "4.0.9"
+yarn = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["ruby"]
+
+[settings.upgrade]
+
+[settings.ruby]
+compile = false

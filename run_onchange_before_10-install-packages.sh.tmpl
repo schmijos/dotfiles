@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+command -v omarchy >/dev/null || { echo "omarchy missing: install Omarchy first" >&2; exit 1; }
+
+omarchy pkg add {{ range .packages.pacman }}{{ . | quote }} {{ end }}{{ if .dellXps14 }}{{ range .packages.dellXps14.pacman }}{{ . | quote }} {{ end }}{{ end }}
+omarchy pkg aur add {{ range .packages.aur }}{{ . | quote }} {{ end }}{{ if .dellXps14 }}{{ range .packages.dellXps14.aur }}{{ . | quote }} {{ end }}{{ end }}

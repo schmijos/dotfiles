@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Fresh laptop: see README. This script is for a machine that already has this checkout.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+omarchy pkg add chezmoi restic bats shellcheck
+chezmoi init --source "$PWD" --apply

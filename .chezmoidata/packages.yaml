@@ -1,0 +1,53 @@
+# Additions on top of a stock Omarchy install (omarchy-base.packages).
+# 1Password and chezmoi are installed by hand before the first apply (README).
+# Base-system and channel packages (sudo, mkinitcpio, efibootmgr, omarchy-keyring,
+# omarchy-dev, omarchy-settings-dev) are left to the installer and `omarchy` itself.
+packages:
+  pacman:
+    - android-tools
+    - aws-cli
+    - bats
+    - clang
+    - claude-desktop
+    - freerdp
+    - gradle
+    - gst-libav
+    - gst-plugin-va
+    - gst-plugins-ugly
+    - jdk21-openjdk
+    - kcov
+    - kdenlive
+    - lazydocker
+    - llvm
+    - ninja
+    - obs-studio
+    - openbsd-netcat
+    - opencascade
+    - owe-lockfeed
+    - plantuml
+    - postgresql
+    - qt6-tools
+    - rclone
+    - restic
+    - rust
+    - scrcpy
+    - shellcheck
+    - slack-desktop
+    - uv
+    - voxtype-bin
+    - wev
+    - xournalpp
+  aur:
+    - google-cloud-cli
+    - nctl
+    - rubymine
+    - semaphoreci-cli
+  dellXps14:
+    pacman:
+      - intel-ucode
+    aur:
+      - displaylink
+      - hm1092-ir-camera
+      - howdy
+      - omarchy-dell-xps-face
+      - pamtester

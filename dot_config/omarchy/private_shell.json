@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "idle": {
+    "screensaver": 150,
+    "lock": 300
+  },
+  "bar": {
+    "position": "top",
+    "transparent": false,
+    "layout": {
+      "left": [
+        {
+          "id": "omarchy.menu"
+        },
+        {
+          "id": "omarchy.workspaces"
+        }
+      ],
+      "center": [
+        {
+          "id": "omarchy.clock",
+          "format": "dddd HH:mm",
+          "formatAlt": "d MMMM 'W'ww yyyy",
+          "verticalFormat": "HH\n—\nmm"
+        }
+      ],
+      "right": [
+        {
+          "id": "renuo.pull-request-counter"
+        },
+        {
+          "id": "omarchy.tray"
+        },
+        {
+          "id": "renuo.rclone"
+        },
+        {
+          "id": "renuo.doubletake"
+        },
+        {
+          "id": "omarchy.keyboard-layout"
+        },
+        {
+          "id": "omarchy.bluetooth"
+        },
+        {
+          "id": "omarchy.network"
+        },
+        {
+          "id": "omarchy.audio"
+        },
+        {
+          "id": "omarchy.monitor"
+        },
+        {
+          "id": "omarchy.power",
+          "showPercentage": false
+        }
+      ],
+      "centerBegin": [
+        {
+          "id": "omarchy.indicators"
+        }
+      ],
+      "centerEnd": [
+        {
+          "id": "omarchy.elsewhen",
+          "zones": "Zurich|Europe/Zurich, Delhi|Asia/Kolkata, Tokyo|Asia/Tokyo, Los Angeles|America/Los_Angeles, New York|America/New_York"
+        },
+        {
+          "id": "omarchy.weather"
+        },
+        {
+          "id": "omarchy.microphone"
+        },
+        {
+          "id": "omarchy.system-update"
+        }
+      ],
+      "tray": []
+    }
+  },
+  "plugins": [
+    {
+      "id": "josua.background"
+    }
+  ],
+  "disabledPlugins": [
+    "omarchy.background"
+  ],
+  "cloneSourceRestores": [
+    "josua.background"
+  ]
+}
