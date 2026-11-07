@@ -19,3 +19,7 @@ test
 .claude/skills/omarchy
 .claude/skills/omarchy-*
 .claude/skills/diagnose-crash
+
+# Credentials set up by hand (README)
+.config/rclone/rclone.conf
+.config/gh/hosts.yml
