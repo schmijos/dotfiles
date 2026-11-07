@@ -13,15 +13,17 @@ The old macOS dotfiles live on the [`macos`](https://github.com/schmijos/dotfile
    (`--source` because the config expects the repo in ~/Work/dotfiles, not chezmoi's default location.)
    It asks whether this is a Dell XPS 14, installs the extra packages from `.chezmoidata/packages.yaml`
    through `omarchy pkg add` / `omarchy pkg aur add`, writes the config, and runs `mise install`.
-5. Secrets by hand: `rclone config` (gdrive), `gh auth login`, and
+5. `omarchy install dictation voxtype`
+6. Secrets by hand: `rclone config` (gdrive), `gh auth login`, and
    `~/.config/restic/work-password` from 1Password.
-6. Restore ~/Work, all or in parts (see below).
+7. Restore ~/Work, all or in parts (see below).
 
 ## Tracking files
 
-~/.config is yours: Omarchy writes its defaults there once at install and never again. Track everything you
-want a new laptop to have, including files you never changed. Omarchy migrations sometimes edit them; that shows
-up in `chezmoi status`. Omarchy's own defaults live in `/usr/share/omarchy/config` for comparison.
+~/.config is yours: Omarchy writes its defaults there once at install and never again. Track only what you
+changed or added. A fresh install brings Omarchy's untouched defaults anyway, and so does everything Omarchy or
+an app sets up by itself: the units Omarchy enables at first login, the speaker tuning, dictation, launchers an
+app registers. Omarchy's current defaults live in `/etc/skel` and `/usr/share/omarchy/config`.
 
 Never track secrets (tokens, keys, credentials). They stay in 1Password.
 
@@ -61,7 +63,12 @@ It's a two-way comparison. For files you never changed, every difference is an O
 you customized, your edits and Omarchy's new changes show up mixed together. To tell them apart, diff the old
 and new Omarchy version (`grep omarchy-settings /var/log/pacman.log | tail -1`) in Omarchy's git repo.
 
-Take what you want into ~/.config by hand, then `chezmoi re-add`.
+For a tool you never changed, which this repo doesn't track, take the new default wholesale:
+`omarchy refresh config <path>`, `omarchy refresh <tool>` (hyprland, tmux, shell, …), or `omarchy-nvim-refresh`.
+For a file you customized, take what you want into ~/.config by hand, then `chezmoi re-add`.
+
+Refresh first, then `chezmoi apply`. A refresh overwrites a whole file or a tool's whole directory, and the
+apply puts your tracked changes back on top.
 
 ## ~/Work backup
 

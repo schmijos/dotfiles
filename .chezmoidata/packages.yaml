@@ -34,7 +34,6 @@ packages:
     - shellcheck
     - slack-desktop
     - uv
-    - voxtype-bin
     - wev
     - xournalpp
   aur:
